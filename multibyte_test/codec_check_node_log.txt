@@ -1,0 +1,111 @@
+$ node multibyte_codec_check_app.js 
+connected.
+connected.
+---------------------------------
+received ping, test_type: android plain ascii, data: abcABC123!"#
+e: SyntaxError: Unexpected token a
+dump ascii: abcABC123!"#
+dump ascii2: abcABC123!#
+dump multibyteCharactors: あいうえお
+dump multibyteCharactors2: あいうえお
+dump data: abcABC123!"#
+detect ascii: 
+{ encoding: 'ascii', confidence: 1 }
+detect ascii2: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors2: 
+{ encoding: 'ascii', confidence: 1 }
+detect data: 
+{ encoding: 'ascii', confidence: 1 }
+---------------------------------
+received ping, test_type: android json ascii, data: {"ascii":"abcABC123!"#"}
+e: SyntaxError: Unexpected token #
+dump ascii: abcABC123!"#
+dump ascii2: abcABC123!#
+dump multibyteCharactors: あいうえお
+dump multibyteCharactors2: あいうえお
+dump data: {"ascii":"abcABC123!"#"}
+detect ascii: 
+{ encoding: 'ascii', confidence: 1 }
+detect ascii2: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors2: 
+{ encoding: 'ascii', confidence: 1 }
+detect data: 
+{ encoding: 'ascii', confidence: 1 }
+---------------------------------
+received ping, test_type: android plain ascii2, data: abcABC123!#
+e: SyntaxError: Unexpected token a
+dump ascii: abcABC123!"#
+dump ascii2: abcABC123!#
+dump multibyteCharactors: あいうえお
+dump multibyteCharactors2: あいうえお
+dump data: abcABC123!#
+detect ascii: 
+{ encoding: 'ascii', confidence: 1 }
+detect ascii2: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors2: 
+{ encoding: 'ascii', confidence: 1 }
+detect data: 
+{ encoding: 'ascii', confidence: 1 }
+---------------------------------
+received ping, test_type: android json ascii2, data: {"ascii2":"abcABC123!#"}
+received ping, JSON.parse(data): [object Object]
+dump ascii: abcABC123!"#
+dump ascii2: abcABC123!#
+dump multibyteCharactors: あいうえお
+dump multibyteCharactors2: あいうえお
+dump data: {"ascii2":"abcABC123!#"}
+detect ascii: 
+{ encoding: 'ascii', confidence: 1 }
+detect ascii2: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors2: 
+{ encoding: 'ascii', confidence: 1 }
+detect data: 
+{ encoding: 'ascii', confidence: 1 }
+---------------------------------
+received ping, test_type: android plain mutibyte charactor, data: ããããã
+e: SyntaxError: Unexpected token ã
+dump ascii: abcABC123!"#
+dump ascii2: abcABC123!#
+dump multibyteCharactors: あいうえお
+dump multibyteCharactors2: あいうえお
+dump data: ããããã
+detect ascii: 
+{ encoding: 'ascii', confidence: 1 }
+detect ascii2: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors2: 
+{ encoding: 'ascii', confidence: 1 }
+detect data: 
+{ encoding: 'utf-8', confidence: 0.9690625 }
+---------------------------------
+received ping, test_type: android json multibyte charactor, data: {"multibyteCharactors":"ããããã"}
+received ping, JSON.parse(data): [object Object]
+dump ascii: abcABC123!"#
+dump ascii2: abcABC123!#
+dump multibyteCharactors: あいうえお
+dump multibyteCharactors2: あいうえお
+dump data: {"multibyteCharactors":"ããããã"}
+detect ascii: 
+{ encoding: 'ascii', confidence: 1 }
+detect ascii2: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors: 
+{ encoding: 'ascii', confidence: 1 }
+detect multibyteCharactors2: 
+{ encoding: 'ascii', confidence: 1 }
+detect data: 
+{ encoding: 'utf-8', confidence: 0.9690625 }
